@@ -1,0 +1,21 @@
+{
+    "userSuccess": {
+      "username": "JDoe",
+      "password": "P@ssword123"
+    },
+    "userFail": {
+      "username": "Test" ,
+      "password": "test"
+    },
+    "newUser": { 
+      "firstName": "John",
+      "lastName": "Doe",
+      "nickname": "JDoe",
+      "password": "P@ssword123"
+    },
+    "accountData": {
+       "bankName": "American Trust Bank",
+       "routingNumber": "",
+       "accountNumber": "050013409871"
+    }
+}
