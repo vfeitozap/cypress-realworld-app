@@ -7,7 +7,10 @@ class UserDataPage {
             bankAccountField: '#bankaccount-bankName-input',
             routingNumberField: '#bankaccount-routingNumber-input',
             accountNumberField: '#bankaccount-accountNumber-input',
-            createAccountButton: '[data-test="bankaccount-form"] > .MuiGrid-container > .MuiGrid-root'
+            createAccountButton: '[data-test="bankaccount-form"] > .MuiGrid-container > .MuiGrid-root',
+            ballanceAccountInofrmation: '.NavDrawer-amount',
+            newTransactionButton: '[data-test="nav-top-new-transaction"]'
+
         }
         return selectors
 
@@ -23,7 +26,12 @@ userBankAccountInformation() {
     cy.get(this.accountNumberField).type(accountNumber)
     cy.get(this.createAccountButton)
 }
-
+userBallanceAccoount() {
+    cy.get(this.ballanceAccountInofrmation).check()
+}
+newTransaction() {
+cy.get(this.newTransactionButton).click()
+}
 }
 
 export default UserDataPage
