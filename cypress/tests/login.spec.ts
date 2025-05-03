@@ -26,7 +26,7 @@ describe('Cypress Realworld Login', () => {
   it('Login - Success', () => {
     loginPage.accessLoginPage()
     loginPage.loginWithAnyUser(userData.userSuccess.username, userData.userSuccess.password)
-    cy.get('[data-test="user-onboarding-dialog-title"]')
+    cy.get('.MuiListSubheader-root').contains("Public")
   })
 
 })

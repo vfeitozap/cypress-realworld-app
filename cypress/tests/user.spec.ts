@@ -9,6 +9,17 @@ const userDataPage = new UserDataPage()
 
 describe('Cypress Realworld User Scenarios', () => {
     
+    it('Creating Bank Account', () => {
+        loginPage.accessLoginPage()
+        loginPage.loginWithAnyUser(userData.userSuccess.username, userData.userSuccess.password)
+        cy.get('[data-test="user-onboarding-next"]').click()
+        cy.get('.MuiListSubheader-root').contains("Public")
+        cy.get('#bankaccount-bankName-input').type("ATB - American Trust Bank")
+        cy.get('#bankaccount-routingNumber-input').type("121000248")
+        cy.get('#bankaccount-accountNumber-input').type("50012349876")
+        cy.get('[data-test="bankaccount-submit"]').click()
+        
+    })
     it('Request Money', () => {
         loginPage.accessLoginPage()
         loginPage.loginWithAnyUser(userData.userSuccess.username, userData.userSuccess.password)
@@ -32,5 +43,12 @@ describe('Cypress Realworld User Scenarios', () => {
         cy.get('[data-test="transaction-create-submit-payment"]').click()
         cy.get('.MuiAlert-message')
         cy.get('[data-test="new-transaction-create-another-transaction"]').click()
+    })
+    it('Check Balance Account', () => {
+        loginPage.accessLoginPage()
+        loginPage.loginWithAnyUser(userData.userSuccess.username, userData.userSuccess.password)
+        cy.get('[data-test="sidenav-user-balance"]')
+        cy.get('[data-test="nav-personal-tab"]').click()
+        cy.get('.MuiListSubheader-root').contains("Personal")
     })
   })
